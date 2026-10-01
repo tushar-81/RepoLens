@@ -1,4 +1,4 @@
-myenv
+venv
 .env
 chroma_db
 __pycache__

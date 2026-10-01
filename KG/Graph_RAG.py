@@ -8,7 +8,7 @@ from KG.create_prompt import build_prompt
 import os
 load_dotenv()
 Open_Ai=os.getenv('OPENAI_API_KEY')
-client_openai = OpenAI(api_key=Open_Ai)
+client_openai = OpenAI()
 
 client = QdrantClient(
     url=os.getenv('QDRANT_CLUSTER'),
@@ -19,7 +19,7 @@ graph=Neo4jGraph(
     url=os.getenv('NEO4J_URI'),
     username=os.getenv('NEO4J_USERNAME'),
     password=os.getenv('NEO4J_PASSWORD'),
-    
+    database=os.getenv('NEO4J_DATABASE')
 )
 
 def Graph_Query_Qdrant(message:str):
